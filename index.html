@@ -22,10 +22,10 @@
         <main id="main" class="container my-4">
             <div class="row">
                 <!-- Left Section -->
-                <div class="col-lg-8">
-                    <div class="mb-3">
-                        <label for="difficulty" class="form-label">Select Difficulty</label>
-                        <select id="difficulty" class="form-select">
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon">Select Difficulty</span>
+                        <select id="difficulty" class="form-select" aria-describedby="basic-addon">
                             <option value="easy" selected>Easy</option>
                             <option value="medium">Medium</option>
                             <option value="hard">Hard</option>
@@ -36,7 +36,7 @@
                         <input type="text" class="form-control" value="The cat sat on the mat." readonly />
                     </div>
                     <div class="mb-3">
-                        <textarea class="form-control" rows="3" placeholder="Click the start button to begin the test"></textarea>
+                        <textarea id="text-area" class="form-control" rows="3" placeholder="Click the start button to begin the test"></textarea>
                     </div>
                     <div class="d-flex gap-2 justify-content-center mb-4">
                         <button class="btn btn-primary">Start</button>
@@ -46,7 +46,7 @@
                 </div>
 
                 <!-- Right Section -->
-                <div class="col-lg-4">
+                <div class="col-md-4">
                     <div id="results-box" class="rounded p-3 text-center">
                         <h2>Results</h2>
                         <p>Level: <span id="difficulty">Easy</span></p>

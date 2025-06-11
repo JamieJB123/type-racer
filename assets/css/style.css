@@ -31,6 +31,9 @@ font-family: var(--secondary-font);
     background-color: var(--primary-color);
     color: #fff;
 }
+#text-area {
+    min-height: 150px;
+}
 
 /* Right Section */
 #results-box {
