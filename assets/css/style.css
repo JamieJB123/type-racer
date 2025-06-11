@@ -1,0 +1,38 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* CSS Variables - fonts and colours */
+:root {
+    --primary-font: 'Nunito', sans-serif;
+    --secondary-font: 'Alegreya', serif;
+    --primary-color: #ff8400; /* Orange */
+}
+
+/* Banner Section */
+#banner {
+background-color: var(--primary-color); 
+font-family: var(--secondary-font);
+}
+#banner button {
+    font-family: var(--primary-font);
+}
+/* Main Section */
+
+#main button {
+    background-color: transparent;
+    color: black;
+    border: 2px solid var(--primary-color);
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    margin: 5px;
+    padding: 0.5rem 1rem;
+}
+
+#main button:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Right Section */
+#results-box {
+    box-shadow: 0 0 10px var(--primary-color);
+}
