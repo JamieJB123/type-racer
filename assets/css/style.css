@@ -31,7 +31,7 @@ font-family: var(--secondary-font);
     background-color: var(--primary-color);
     color: #fff;
 }
-#text-area {
+#user-input {
     min-height: 150px;
 }
 
