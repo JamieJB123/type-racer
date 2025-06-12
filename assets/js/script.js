@@ -19,12 +19,16 @@ const typingTexts = {
 
 let startTime = null;
 let endTime = null;
+const feedbackArea = document.getElementById("feedback-area");
 
 // Function to display random text based on selected difficulty
 function displayRandomText() {
     const difficultySelect = document.getElementById("difficulty");
     const selectedDifficulty = difficultySelect.value;
     const textInput = document.querySelector("input[type='text']");
+
+    // Reset feedback area
+    feedbackArea.innerHTML = ""; 
 
     // Get random text from the selected difficulty level
     const randomText = typingTexts[selectedDifficulty][Math.floor(Math.random() * typingTexts[selectedDifficulty].length)];
@@ -35,6 +39,10 @@ function displayRandomText() {
 
 // Function to start the typing test
 function startTest() {
+    // Reset feedback area
+    feedbackArea.innerHTML = "";
+
+    
     startTime = new Date(); // Record the start time
     document.getElementById("start-btn").disabled = true; // Disable the start button
     document.getElementById("stop-btn").disabled = false; // Enable the stop button
@@ -84,12 +92,40 @@ function stopTest() {
     calculateWPM();
 }
 
+// Function to provide real-time feedback on typing accuracy
+function provideTypingFeedback() {
+    const userInput = document.getElementById("user-input").value.trim();
+    const sampleText = document.querySelector("input[type='text']").value.trim();
+
+    // Split the user input and sample text into words
+    const userWords = userInput.split(/\s+/);
+    const sampleWords = sampleText.split(/\s+/);
+
+    // Generate feedback with color-coded words
+    let feedbackHTML = "";
+    for (let i = 0; i < sampleWords.length; i++) {
+        if (userWords[i] === sampleWords[i]) {
+            feedbackHTML += `<span class="lead"style="background-color:rgb(15, 132, 216);">${sampleWords[i]}</span> `;
+        } else if (userWords[i] !== undefined) {
+            feedbackHTML += `<span class="lead" style="background-color:rgb(254, 36, 7);">${sampleWords[i]}</span> `;
+        } else {
+            feedbackHTML += `<span>${sampleWords[i]}</span> `;
+        }
+    }
+
+    // Update the feedback area with the generated HTML
+    feedbackArea.innerHTML = feedbackHTML.trim();
+}
+
 // Event listener for difficulty selection change
 document.getElementById("difficulty").addEventListener("change", displayRandomText);
 
 // Event listeners for start and stop buttons
 document.getElementById("start-btn").addEventListener("click", startTest);
 document.getElementById("stop-btn").addEventListener("click", stopTest);
+
+// Event listener for real-time feedback
+document.getElementById("user-input").addEventListener("input", provideTypingFeedback);
 
 // Initial text display when the page loads
 window.onload = displayRandomText;
