@@ -81,6 +81,7 @@ function stopTestOnEnter(event) {
   }
 }
 
+// Function to reset the test and results section when user presses retry
 function retry() {
   displayRandomText();
   document.getElementById("retry-btn").disabled = true; // Disable retry button
@@ -159,7 +160,7 @@ document.getElementById("retry-btn").addEventListener("click", retry);
 document.getElementById("instructions-btn").addEventListener("click", () => {
     const instructionsModal = new bootstrap.Modal(document.getElementById("instructions-modal"));
     instructionsModal.show();
-});
+});``
 
 // Initial text display when the page loads
 window.onload = displayRandomText;
