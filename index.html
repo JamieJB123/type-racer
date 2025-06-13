@@ -20,6 +20,32 @@
             </button>
         </header>
 
+        <!-- Instructions Modal -->
+        <div class="modal fade" id="instructions-modal" tabindex="-1" aria-labelledby="instructions-modal-label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="instructions-modal-label">How to Take the Typing Test</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Welcome to TypeRacer! Here's how to take the typing test:</p>
+                        <ul>
+                            <li><strong>Start the Test:</strong> Begin typing in the input area to start the test automatically.</li>
+                            <li><strong>Change Difficulty:</strong> Use the dropdown menu to select a difficulty level (Easy, Medium, Hard). The sample text will update accordingly.</li>
+                            <li><strong>Complete the Test:</strong> Press the Enter key to finish the test and see your results.</li>
+                            <li><strong>Retry the Test:</strong> Click the "Retry" button to reset the test and try again at the same difficulty level.</li>
+                            <li><strong>Real-Time Feedback:</strong> As you type, correctly typed words are highlighted in blue, and incorrectly typed words are highlighted in red.</li>
+                        </ul>
+                        <p>Good luck, and enjoy improving your typing speed!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Main Content -->
         <main id="main">
             <div class="container my-4">
@@ -45,8 +71,6 @@
                             <textarea id="user-input" class="form-control" rows="3" placeholder="Click the start button to begin the test"></textarea>
                         </div>
                         <div class="d-flex gap-2 justify-content-center mb-4">
-                            <button class="btn btn-primary" id="start-btn">Start</button>
-                            <button class="btn btn-primary" id="stop-btn" disabled>Stop</button>
                             <button class="btn btn-primary" id="retry-btn">Retry</button>
                         </div>
                     </div>
@@ -72,3 +96,4 @@
         <script src="https://kit.fontawesome.com/9199489a36.js" crossorigin="anonymous"></script>
     </body>
 </html>
+
